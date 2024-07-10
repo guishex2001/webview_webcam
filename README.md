@@ -4,7 +4,7 @@ Este proyecto combina un servidor de streaming de webcam utilizando Flask y Open
 
 ## Estructura del Proyecto
 
-carpeta_raiz/
+carpeta_raíz/
 │
 ├── main.py
 ├── templates/
@@ -58,4 +58,4 @@ Ejecuta el archivo main.py:
 sh
 Copiar código
 python main.py
-Esto iniciará el servidor Flask y abrirá una ventana WebView que mostrará el stream de la webcam en tiempo real y abarcará todas las pantallas conectadas.
+Esto iniciará el servidor Flask y abrirá una ventana WebView que mostrará el stream de la webcam en tiempo real y abarcará todas las pantallas conectadas
