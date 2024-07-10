@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Webcam Stream</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Evita el desbordamiento y barras de scroll */
+        }
+        img {
+            width: 100%;
+            height: auto; /* Ajusta la altura automáticamente según el ancho */
+            display: block; /* Evita espacios adicionales debidos a elementos en línea */
+        }
+    </style>
 </head>
 <body>
-    <img src="{{ url_for('video_feed') }}" width="100%">
+    <img src="{{ url_for('video_feed') }}">
 </body>
 </html>

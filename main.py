@@ -38,12 +38,18 @@ class WebViewWindow:
 
 def gen_frames():
     camera = cv2.VideoCapture(0)  # Captura de la cámara web (índice 1, cambiar a 0 si es necesario)
+
+    # Ajustar la resolución de la cámara para mejorar la calidad
+    camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)  # Ancho deseado, ajustar según la capacidad de la cámara
+    camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)  # Alto deseado, ajustar según la capacidad de la cámara
+
     while True:
         success, frame = camera.read()  # Leer el frame de la cámara
         if not success:
             break
         else:
-            ret, buffer = cv2.imencode('.jpg', frame)
+            # Ajustar la calidad del JPEG para mejorar la imagen
+            ret, buffer = cv2.imencode('.jpg', frame, [cv2.IMWRITE_JPEG_QUALITY, 80])
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
