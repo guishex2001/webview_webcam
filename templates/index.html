@@ -9,8 +9,9 @@
             overflow: hidden; /* Evita el desbordamiento y barras de scroll */
         }
         img {
-            width: 100%;
-            height: auto; /* Ajusta la altura automáticamente según el ancho */
+            width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+            height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+            object-fit: cover; /* Ajusta la imagen sin distorsión, cubriendo el contenedor */
             display: block; /* Evita espacios adicionales debidos a elementos en línea */
         }
     </style>
